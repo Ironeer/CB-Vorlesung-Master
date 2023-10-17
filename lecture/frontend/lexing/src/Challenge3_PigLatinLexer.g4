@@ -42,7 +42,7 @@ STARTING_WITH_CONSONANT: CONSONANTS OPTIONAL_CHARS {
     String prefixConstants = matcher.group(1);
     setText(getText().substring(prefixConstants.length()) + "-" + prefixConstants + "ay");
  };
-STARTING_WITH_VOCAL: VOCAL OPTIONAL_CHARS {setText(getText().charAt(0) + getText().substring(1) + "-ay"); };
+STARTING_WITH_VOCAL: VOCAL OPTIONAL_CHARS {setText(getText() + "-ay"); };
 
 
 WHITESPACE  : [ \t\n]+ -> skip ;
