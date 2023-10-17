@@ -36,8 +36,8 @@ THEN: 'then';
 ELSE: 'else';
 
 //others
-NAME: CHAR [a-zA-Z0-9]+;
-NUMERIC_CONSTANT: DIGIT ('.' DIGIT+)? ('E' ( '+' | '-') DIGIT+)?  ;
+NAME: CHAR [a-zA-Z0-9]*;
+NUMERIC_CONSTANT: DIGIT+ ('.' DIGIT+)? ('E' ( '+' | '-') DIGIT+)?  ;
 
 WHITESPACE  : [ \t\n]+ -> skip ;
 
