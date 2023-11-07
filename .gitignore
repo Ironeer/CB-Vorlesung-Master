@@ -1,3 +1,5 @@
+**/gen/
+
 # IDE generated files #
 ######################
 .vscode/
@@ -27,7 +29,6 @@ temp/
 resources/
 docs/
 pdf/
-gen/
 
 
 # Hugo / Pandoc related files #
@@ -76,7 +77,6 @@ pip-log.txt
 .tox/
 .cache
 .pytest_cache/
-*.log
 .python-version
 .pyre/
 

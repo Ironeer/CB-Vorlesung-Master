@@ -23,9 +23,14 @@ parameterList: (IDENTIFIER (COMMA IDENTIFIER)*)?;
 block: SCOPE_START statement* SCOPE_END;
 ifStatement: IF OPEN_PARANTHESE boolExpression CLOSE_PARANTHESE block (ELSE block)?;
 boolExpression: IDENTIFIER COMPARISON INTEGER_CONSTANT;
-returnStatement: RETURN (IDENTIFIER | INTEGER_CONSTANT) STATEMENT_END;
+returnStatement: RETURN value=(IDENTIFIER | INTEGER_CONSTANT) STATEMENT_END;
 
-expression: expression DOT_OPERATOR expression | expression DASH_OPERATOR expression | functionCall | IDENTIFIER | INTEGER_CONSTANT;
+expression: expression DOT_OPERATOR expression # Dot
+            | expression DASH_OPERATOR expression # Dash
+            | functionCall # call
+            | IDENTIFIER # Identifier
+            | INTEGER_CONSTANT # Integer
+            ;
 functionCall: IDENTIFIER OPEN_PARANTHESE expression CLOSE_PARANTHESE;
 
 assignment: VAR_KEYWORD IDENTIFIER ASIGNMENT expression;
